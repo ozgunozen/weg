@@ -1,0 +1,22 @@
+type Employee {
+  id: ID! @fake(type: uuid)
+  name: String! @fake(type: firstName)
+  surname: String! @fake(type: lastName)
+  title: String! @fake(type: jobTitle)
+  gender: String! @examples(values: ["male", "female"])
+  image: String! @fake(type: avatarUrl)
+  email: String! @fake(type: email)
+  votes: Int! @fake(type: number, options: {minNumber: 1, maxNumber: 20, precisionNumber: 1})
+  address: Address!
+}
+
+type Address {
+  street: String! @fake(type: streetName)
+  city: String! @fake(type: city)
+  country: String! @fake(type: country)
+}
+
+type Query {
+  Employees: [Employee]! @listLength(min:20, max: 20)
+  Employee: Employee!
+}

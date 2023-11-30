@@ -1,0 +1,21 @@
+networks:
+  isolation-network:
+    driver: bridge
+
+services:
+  faker:
+    build:
+      context: .
+      dockerfile: faker.Dockerfile
+    ports:
+      - "9002:9002"
+    networks:
+      - isolation-network
+  next:
+    build:
+      context: .
+      dockerfile: next.Dockerfile
+    ports:
+      - "9003:9003"
+    networks:
+      - isolation-network
