@@ -2,9 +2,9 @@ import styles from './styles.module.scss'
 
 import { useRouter } from 'next/navigation';
 
-import { Employee } from './../../graphql/types';
-import { setSelectedEmployee, addVote } from './../../redux/listSlice';
-import { useAppDispatch } from './../../redux/hooks';
+import { Employee } from '@/graphql/types';
+import { setSelectedEmployee, addVote } from '@/redux/listSlice';
+import { useAppDispatch } from '@/redux/hooks';
 
 type Props = {
   employee: Employee

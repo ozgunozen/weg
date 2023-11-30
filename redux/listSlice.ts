@@ -1,9 +1,9 @@
 import { createSlice, createSelector, PayloadAction } from '@reduxjs/toolkit';
-import { Employee } from './../graphql/types';
+import { Employee } from '@/graphql/types';
 import { AppThunk, AppState } from './store';
-import { apolloClient } from './../graphql/client';
-import { getEmployees } from './../graphql/getEmployees.query';
-import { getEmployee } from './../graphql/getEmployee.query';
+import { apolloClient } from '@/graphql/client';
+import { getEmployees } from '@/graphql/getEmployees.query';
+import { getEmployee } from '@/graphql/getEmployee.query';
 import { HYDRATE } from 'next-redux-wrapper';
 
 export interface ListState {
@@ -36,7 +36,6 @@ export const listSlice = createSlice({
   },
   extraReducers: {
     [HYDRATE]: (state, action) => {
-      console.log(state.employees.length)
       if (state.employees.length) {
         return {...state};
       }
@@ -49,7 +48,7 @@ export const listSlice = createSlice({
   }
 });
 
-export const {
+export const {   
   setEmployees,
   setSelectedEmployee,
   addVote,

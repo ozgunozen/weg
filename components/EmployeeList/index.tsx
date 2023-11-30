@@ -1,4 +1,4 @@
-import { Employee } from './../../graphql/types';
+import { Employee } from '@/graphql/types';
 
 import { EmployeeListItem } from './../EmployeeListItem';
 

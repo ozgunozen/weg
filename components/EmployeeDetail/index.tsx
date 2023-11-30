@@ -1,6 +1,6 @@
 import styles from './styles.module.scss'
 
-import { Employee } from './../../graphql/types';
+import { Employee } from '@/graphql/types';
 
 type Props = {
   employee: Employee
